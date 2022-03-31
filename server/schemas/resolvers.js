@@ -118,14 +118,25 @@ const resolvers = {
       const product = await Product.create(args);
       return product;
     },
-    updateProduct: async (parent, { _id, quantity }) => {
+    updateProduct: async (parent, { name }) => {
       const decrement = Math.abs(quantity) * -1;
 
       return await Product.findByIdAndUpdate(_id, { $inc: { quantity: decrement } }, { new: true });
     },
     deleteProduct: async (parent, args) => {
-      const product = await Product.findByIdAndDelete(_id);
+      const product = await Product.findByIdAndDelete(args);
       return product;
+    },
+    buyProduct: async (parent, { name }) => {
+      let product = await Product.findOne({name}).populate('category');
+      if(product.quantity > 0) {
+        let decrement = product.quantity - 1;
+        product = await Product.findOneAndUpdate({name},{ quantity: decrement}, { new: true }).populate('category');
+        return product;
+      } else {
+        product.quantity = null;
+        return product; 
+      }
     },
     login: async (parent, { email, password }) => {
       const user = await User.findOne({ email });
