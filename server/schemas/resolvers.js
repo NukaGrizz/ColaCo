@@ -50,8 +50,8 @@ const resolvers = {
       }
 
       throw new AuthenticationError('Not logged in');
-    }
-    /*checkout: async (parent, args, context) => {
+    },
+    checkout: async (parent, args, context) => {
       const url = new URL(context.headers.referer).origin;
       const order = new Order({ products: args.products });
       const line_items = [];
@@ -86,7 +86,7 @@ const resolvers = {
       });
 
       return { session: session.id };
-    }*/
+    }
   },
   Mutation: {
     addUser: async (parent, args) => {
