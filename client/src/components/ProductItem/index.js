@@ -5,6 +5,7 @@ import { useStoreContext } from "../../utils/GlobalState";
 import { ADD_TO_CART, UPDATE_CART_QUANTITY } from "../../utils/actions";
 import { idbPromise } from "../../utils/helpers";
 import { BUY_SODA } from "../../utils/mutations";
+import sodaBottle from '../../assets/cola-bottle.png';
 
 function ProductItem(item) {
   const [state, dispatch] = useStoreContext();
@@ -20,6 +21,12 @@ function ProductItem(item) {
   } = item;
 
   const { cart } = state
+
+  let backgoundStyle = {
+    backgroundImage: `url(${sodaBottle})`,
+    backgroundSize: "90%",
+    backgroundRepeat: "no-repeat"
+  };
 
   function download(content, fileName, contentType) {
     const a = document.createElement("a");
@@ -74,16 +81,17 @@ function ProductItem(item) {
   }
 
   return (
-    <div className="ccontainer">
-        
-        <p>{name}</p>
-        <p>{description}</p>
-      
-      <div>
-        <div>{quantity} {pluralize("item", quantity)} in stock</div>
-        <span>${price}</span>
+    <div className="itemContainer">
+        <div className="iteminfo">
+          <p className="styleizeText" style={ backgoundStyle }>{name}</p>
+          <p>{description}</p>
+        </div>
+      <div className="buySide">
+        <div>STOCK: {quantity} </div>
+        <div>COST: ${price}</div>
+        <button className="buttonSoda" onClick={() => buySoda(name)}>Buy {name}</button>
       </div>
-      <button onClick={() => buySoda(name)}>buy soda</button>
+      
     </div>
   );
 }

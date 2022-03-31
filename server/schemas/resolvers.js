@@ -118,13 +118,12 @@ const resolvers = {
       const product = await Product.create(args);
       return product;
     },
-    updateProduct: async (parent, { name }) => {
-      const decrement = Math.abs(quantity) * -1;
+    updateProduct: async (parent, args) => {
 
-      return await Product.findByIdAndUpdate(_id, { $inc: { quantity: decrement } }, { new: true });
+      return await Product.findOneAndUpdate(args.name, args , { new: true });
     },
     deleteProduct: async (parent, args) => {
-      const product = await Product.findByIdAndDelete(args);
+      const product = await Product.findOneAndDelete(args.name);
       return product;
     },
     buyProduct: async (parent, { name }) => {

@@ -34,7 +34,7 @@ db.once('open', async () => {
     {
       name: 'Cola',
       description:
-        'An explosion of flavor that will knock your socks off!',
+        'A basic no nonsense cola that is the perfect pick me up for any occasion.',
       category: categories[0]._id,
       price: 1.00,
       maximumQuantity: 200,
@@ -43,7 +43,7 @@ db.once('open', async () => {
     {
       name: 'Mega Pop',
       description:
-        'An explosion of flavor that will knock your socks off!',
+        'Not for the faint of heart.  So flavorful and so invigorating, it should probably be illegal.',
       category: categories[0]._id,
       price: 1.00,
       maximumQuantity: 50,

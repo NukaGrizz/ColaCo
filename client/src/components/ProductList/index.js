@@ -45,14 +45,19 @@ function ProductList() {
   }
 
   return (
-    <div>
-      <div className="container">
-        <img src={sodaGirl} alt="Girl in a jacket" width="160" height="200"/>
-        <div >
-          <h1>ColaCo</h1>
-          <p>Money: $ {count}</p>
-          <button onClick={() => setCount(count + .25)}>Add money</button>
-        </div>
+    <div className="width">
+      <div className="container justify high">
+        <img className="img" src={sodaGirl} alt="Soda Girl" />
+        <div className="headAd" >
+          <h1 className="styleizeTitle">ColaCo</h1>
+        
+          <div className="container justify moneyBox " >
+          <div>
+          <p className="">Money: </p>
+          <p>$ {count}</p>
+          </div>
+          <button className="addMoneyBut padding" onClick={() => setCount(count + .25)}>Add Money</button>
+        </div></div>
       </div>
       {state.products.length ? (
         <div className="flex-row">

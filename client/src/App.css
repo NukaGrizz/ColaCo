@@ -20,7 +20,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  font-size: 20px;
   color: white;
 }
 
@@ -39,4 +39,93 @@
 
 .container {
   display:flex;
+}
+
+.itemContainer {
+  display:flex;
+  justify-content: space-between;
+  border: red solid 2px;
+}
+
+.high {
+  height: 189.03px;
+}
+
+.justify {
+  justify-content: space-between;
+  border: black solid 3px;
+}
+
+.moneyBox {
+ height: 60%;
+}
+.img {
+  width: 40%;
+  height: fit-content;
+}
+.headAd {
+  width: 60%;
+  height: 100%;
+}
+.width {
+  max-width: 400px;
+  border: red solid 5px;
+  margin: 2px
+}
+
+.addMoneyBut {
+  width: 50%;
+  height: 50%;
+  margin: auto;
+}
+
+.addMoneyBut:hover {
+  background-color: red;
+  color:white;
+  font-size: 15px;
+}
+
+.styleizeTitle {
+  text-align: center;
+  color: red;
+  font-weight: bold;
+  font-style: italic;
+  background-color: white ;
+  border-top: red solid 10px;
+  border-bottom: red solid 10px;
+  margin:0%;
+  height: 28%;
+}
+
+.iteminfo {
+  width: 70%;
+}
+
+.buySide {
+  width: 30%;
+  border: red solid 1px;
+}
+
+.styleizeText {
+  text-align: center;
+  color: red;
+  font-weight: bold;
+  font-style: italic;
+  border-top: red solid 1px;
+  border-bottom: red solid 1px;
+  height: 34px;
+  background-position: center;
+  margin: 0%
+}
+
+.buttonSoda {
+  width: 100%;
+  height: 40%;
+  font-weight: bold;
+}
+
+.buttonSoda:hover {
+  background-color: red;
+  color:white;
+  font-size: 15px;
 }
