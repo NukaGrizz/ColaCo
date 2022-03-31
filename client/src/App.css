@@ -56,9 +56,6 @@
   border: black solid 3px;
 }
 
-.moneyBox {
- height: 60%;
-}
 .img {
   width: 40%;
 }
@@ -72,18 +69,6 @@
   margin: 2px
 }
 
-.addMoneyBut {
-  width: 50%;
-  height: 50%;
-  margin: auto;
-}
-
-.addMoneyBut:hover {
-  background-color: red;
-  color:white;
-  font-size: 15px;
-}
-
 .styleizeTitle {
   text-align: center;
   color: red;
@@ -94,6 +79,28 @@
   border-bottom: red solid 10px;
   margin:0%;
   height: 28%;
+  padding: 10px 0 0 0;
+}
+
+.moneyBox {
+ height: 54%;
+}
+
+.moneyStats {
+  width: 35%;
+  padding: 0 0 0 8px;
+}
+
+.addMoneyBut {
+  width: 50%;
+  height: 50%;
+  margin: auto;
+}
+
+.addMoneyBut:hover {
+  background-color: red;
+  color:white;
+  font-size: 15px;
 }
 
 .iteminfo {
@@ -114,7 +121,8 @@
   border-bottom: red solid 1px;
   height: 34px;
   background-position: center;
-  margin: 0%
+  margin: 0%;
+  padding: 10px 0 0 0;
 }
 
 .buttonSoda {
