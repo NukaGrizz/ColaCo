@@ -23,7 +23,7 @@ function ProductItem(item) {
 
   function download(content, fileName, contentType) {
     const a = document.createElement("a");
-    const file = new Blob([JSON.stringify(content, null, 2)], {type : 'application/json'});
+    const file = new Blob([JSON.stringify(content, null, 2)], {type : contentType});
     a.href = URL.createObjectURL(file);
     a.download = fileName;
     a.click();
@@ -33,21 +33,22 @@ function ProductItem(item) {
     //do you have enough money
     if(count<price){
       alert("not enough money")
-    } else{
-    item.subtract(-price)
-
-    //once bought print soda JSON
+    } else {
     let saleArry = await getSoda({variables: {name}})
-    console.log(saleArry.data.buyProduct.name)
-    let sodaObject = {
-      name : saleArry.data.buyProduct.name,
-      description : saleArry.data.buyProduct.description,
-      price : saleArry.data.buyProduct.price,
-      maximumQuantity : saleArry.data.buyProduct.maximumQuantity
+    if(saleArry.data.buyProduct.quantity == 0 || saleArry.data.buyProduct.quantity == null ) {
+      alert("SOLDOUT")
+    } else {
+      item.subtract(-price)
+      let sodaObject = {
+        name : saleArry.data.buyProduct.name,
+        description : saleArry.data.buyProduct.description,
+        price : saleArry.data.buyProduct.price,
+        maximumQuantity : saleArry.data.buyProduct.maximumQuantity
+      }
+      download(sodaObject, sodaObject.name, 'application/json')
     }
-    download(sodaObject, sodaObject.name, JSON)
-
     //if no good report sold out
+  
     }
   }
 
