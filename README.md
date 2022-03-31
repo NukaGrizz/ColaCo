@@ -24,7 +24,7 @@
   ![Screenshot](./client/public/Screenshot.png)
 
 
-  ## Server Operations
+  ## Server
   ### Queries
 
   The following queres can be used in Insomnia or like application to perform the following server operations
