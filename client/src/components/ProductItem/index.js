@@ -11,6 +11,7 @@ function ProductItem(item) {
   const [getSoda] = useMutation(BUY_SODA);
 
   const {
+    count,
     description,
     name,
     _id,
@@ -30,6 +31,10 @@ function ProductItem(item) {
 
   async function buySoda(name) {
     //do you have enough money
+    if(count<price){
+      alert("not enough money")
+    } else{
+    item.subtract(-price)
 
     //once bought print soda JSON
     let saleArry = await getSoda({variables: {name}})
@@ -43,6 +48,7 @@ function ProductItem(item) {
     download(sodaObject, sodaObject.name, JSON)
 
     //if no good report sold out
+    }
   }
 
   const addToCart = () => {
@@ -67,7 +73,7 @@ function ProductItem(item) {
   }
 
   return (
-    <div className="card px-1 py-1">
+    <div className="ccontainer">
         
         <p>{name}</p>
         <p>{description}</p>

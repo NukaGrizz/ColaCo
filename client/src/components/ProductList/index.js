@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect , useState } from "react";
 import ProductItem from "../ProductItem";
 import { useStoreContext } from "../../utils/GlobalState";
 import { UPDATE_PRODUCTS } from "../../utils/actions";
@@ -6,6 +6,7 @@ import { useQuery } from '@apollo/react-hooks';
 import { QUERY_PRODUCTS } from "../../utils/queries";
 import { idbPromise } from "../../utils/helpers";
 import spinner from "../../assets/spinner.gif";
+import sodaGirl from '../../assets/soda-g660b20d09_1920.jpg';
 
 function ProductList() {
   const [state, dispatch] = useStoreContext();
@@ -13,6 +14,8 @@ function ProductList() {
   const { currentCategory } = state;
 
   const { loading, data } = useQuery(QUERY_PRODUCTS);
+
+  const [count, setCount] = useState(0);
 
   useEffect(() => {
     if(data) {
@@ -42,8 +45,15 @@ function ProductList() {
   }
 
   return (
-    <div className="my-2">
-      <h2>Our Products:</h2>
+    <div>
+      <div className="container">
+        <img src={sodaGirl} alt="Girl in a jacket" width="160" height="200"/>
+        <div >
+          <h1>ColaCo</h1>
+          <p>Money: $ {count}</p>
+          <button onClick={() => setCount(count + .25)}>Add money</button>
+        </div>
+      </div>
       {state.products.length ? (
         <div className="flex-row">
             {filterProducts().map(product => (
@@ -54,6 +64,8 @@ function ProductList() {
                   name={product.name}
                   price={product.price}
                   quantity={product.quantity}
+                  count={count}
+                  subtract={diff => setCount(count + diff)}
                 />
             ))}
         </div>
