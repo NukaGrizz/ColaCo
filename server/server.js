@@ -20,13 +20,13 @@ app.use(express.json());
 // Serve up static assets
 //app.use('/images', express.static(path.join(__dirname, '../client/images')));
 
-//if (process.env.NODE_ENV === 'production') {
-//  app.use(express.static(path.join(__dirname, '../client/build')));
-//}
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static(path.join(__dirname, '../client/build')));
+}
 
-//app.get('*', (req, res) => {
- // res.sendFile(path.join(__dirname, '../client/build/index.html'));
-//});
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../client/build/index.html'));
+});
 
 //start sever once db loaded await server start then apply middleware and start listening for commands
 db.once('open', () => {
