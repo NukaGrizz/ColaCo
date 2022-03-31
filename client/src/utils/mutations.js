@@ -30,6 +30,23 @@ export const ADD_ORDER = gql`
   }
 `;
 
+export const BUY_SODA = gql`
+  mutation buyProduct ($name: String!){ 
+    buyProduct (name: $name) { 
+      _id 
+      name 
+      description 
+      price 
+      maximumQuantity 
+      quantity 
+      category{
+        _id 
+        name
+      } 
+    } 
+  }
+`
+
 
 export const ADD_USER = gql`
   mutation addUser($firstName: String!, $lastName: String!, $email: String!, $password: String!) {
