@@ -101,7 +101,7 @@
 
   GraphQL
   ```GraphQL
-  mutation addProduct($name: String!, $description: String!, $price: Float!, $maximumQuantity: Int!, $quantity: Int!, $category: ID!) { addProduct(name: $name, description: $description, price: $price, maximumQuantity: $maximumQuantity, quantity: $quantity, category: $category) {_id,name,description,price,maximumQuantity,maximumQuantity,category{_id,name}}}
+  mutation addProduct($name: String!, $description: String!, $price: Float!, $maximumQuantity: Int!, $quantity: Int!, $category: ID!) { addProduct(name: $name, description: $description, price: $price, maximumQuantity: $maximumQuantity, quantity: $quantity, category: $category) {_id,name,description,price,maximumQuantity,quantity,category{_id,name}}}
   ```
 
   Query Variables
@@ -120,7 +120,7 @@
 
   GraphQL
   ```GraphQL
-  mutation updateProduct($name: String!, $description: String, $price: Float, $maximumQuantity: Int, $quantity: Int, $category: ID) { updateProduct(name: $name, description: $description, price: $price, maximumQuantity: $maximumQuantity, quantity: $quantity, category: $category) {_id,name,description,price,maximumQuantity,maximumQuantity,category{_id,name}}
+  mutation updateProduct($name: String!, $description: String, $price: Float, $maximumQuantity: Int, $quantity: Int, $category: ID) { updateProduct(name: $name, description: $description, price: $price, maximumQuantity: $maximumQuantity, quantity: $quantity, category: $category) {_id,name,description,price,maximumQuantity,quantity,category{_id,name}}
   }
   ```
 
@@ -140,7 +140,7 @@
 
   GraphQL
   ```GraphQL
-  mutation deleteProduct($name: String!) { deleteProduct(name: $name) {_id,name,description,price,maximumQuantity,maximumQuantity,category{_id,name}}}
+  mutation deleteProduct($name: String!) { deleteProduct(name: $name) {_id,name,description,price,maximumQuantity,quantity,category{_id,name}}}
   ```
 
   Query Variables
