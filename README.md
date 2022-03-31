@@ -3,15 +3,22 @@
 [![MIT License](https://img.shields.io/badge/License-MIT-blue)](https://choosealicense.com/licenses/mit/)
   
   ## Description
-  ColaCo virtual vending machine for their new line of virtual sodas
+  ColaCo virtual vending machine for their new line of virtual sodas. Users are able to add money to the digital vending machine and purchase a virtual soda. Upon successful purchase users recieve a downloaded JSON file containing their virtual soda.
   
   
   ## Table of Contents
-  * [Installation](#Installation)
   * [ScreenShot](#ScreenShot)
+  * [Installation](#Installation)
+  * [MERN TechStack](#mern-techstack)
   * [Server](#Server)
   * [License](#License)
   * [Questions](#Questions)
+  
+  
+  ## ScreenShot
+  
+  ![Screenshot](./client/public/Screenshot.png)
+  
   
   ## Installation
   1. Download or clone the app from github
@@ -19,12 +26,16 @@
   4. To seed db run "npm run seed" in the command line
   3. To start the app open app in command line and run "npm start" in the command line
 
-  ## ScreenShot
-  
-  ![Screenshot](./client/public/Screenshot.png)
+  ## MERN TechStack
+  1. MongoDB
+  2. Express.js
+  3. React
+  4. Node.js
+  5. Mongoose
+  6. Apollo Server
+  7. GraphQL
 
-
-  ## Server Operations
+  ## Server
   ### Queries
 
   The following queres can be used in Insomnia or like application to perform the following server operations
