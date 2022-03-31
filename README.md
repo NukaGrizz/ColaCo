@@ -21,7 +21,7 @@
 
   ## ScreenShot
   
-  ![Screenshot](./public/Screenshot.png)
+  ![Screenshot](./client/public/Screenshot.png)
 
 
   ## Server Operations
