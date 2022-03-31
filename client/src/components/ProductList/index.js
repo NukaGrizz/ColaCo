@@ -52,9 +52,9 @@ function ProductList() {
           <h1 className="styleizeTitle">ColaCo</h1>
         
           <div className="container justify moneyBox " >
-          <div>
-          <p className="">Money: </p>
-          <p>$ {count}</p>
+          <div className="moneyStats">
+            <p >Money: </p>
+            <p>$ {count}</p>
           </div>
           <button className="addMoneyBut padding" onClick={() => setCount(count + .25)}>Add Money</button>
         </div></div>
