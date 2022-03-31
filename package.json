@@ -22,5 +22,10 @@
     "url": "https://github.com/NukaGrizz/ColaCo/issues"
   },
   "homepage": "https://github.com/NukaGrizz/ColaCo#readme",
-  "dependencies": {}
+  "dependencies": {
+    "if-env": "^1.0.4"
+  },
+  "devDependencies": {
+    "concurrently": "^7.0.0"
+  }
 }
